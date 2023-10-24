@@ -22,7 +22,7 @@ public class SendEmailScheduler {
     private final EmailCreatorService emailCreatorService;
     private final RabbitProducer rabbitProducer;
 
-    @Scheduled(cron = "0 */1 * ? * *")
+    @Scheduled(cron = "midnight")
     public void sendEmails() {
         var users = userRepository.findAll();
         var emailMessages = emailCreatorService.getEmailMessages(users);

@@ -31,7 +31,7 @@ public class TaskReportEmailCreator implements EmailCreator {
         addUncompletedTasksInfo(emailText, user.getTasks());
         return emailText.toString();
     }
-    
+
 
     private void addUncompletedTasksInfo(StringBuilder email, List<Task> tasks) {
         var uncompletedTaskHeaders = tasks.stream()
